@@ -5,6 +5,7 @@ use App\Interfaces\GlobalInterface;
 class GlavniInterfazeServise implements GlobalInterface
 {
     protected $lesson;
+    
     public function get(){        
        return  $this->lesson->get();      
     }
