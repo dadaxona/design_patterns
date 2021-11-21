@@ -8,5 +8,10 @@ use Illuminate\Database\Eloquent\Model;
 class OopProject extends Model
 {
     use HasFactory;
-    protected $fillable=['name','email','password']; 
+    protected $fillable=['name','email','password'];
+    
+    public function client()
+    {
+        return $this->belongsTo(Client::class);
+    }
 }
