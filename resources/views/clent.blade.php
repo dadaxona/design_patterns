@@ -74,11 +74,18 @@
                         <input type="number" name="income_generators_count" class="form-control" id="exampleInputPassword1" required>
                      
                     </div>
+                    
                 </div>
             </div>
-              <div class="mb-3">
+            <div class="mb-3">
                 <label for="exampleInputPassword1" class="form-label">Pasport seriyasi</label>
                 <input type="text" name="pasport_series" class="form-control" id="exampleInputPassword1" required>
+               
+              </div>
+
+              <div class="mb-3">
+                <label for="exampleInputPassword1" class="form-label">check_id</label>
+                <input type="number" name="check_id" class="form-control" id="exampleInputPassword1" required>
                
               </div>
           
@@ -107,6 +114,7 @@
                         <td>{{$item->famliy_member_count}}</td>
                         <td>{{$item->income_generators_count}}</td>
                         <td>{{$item->pasport_series}}</td>
+                        <td>{{$item->check_id}}</td>
                         <td><a href="{{ route('clients.edit',$item->id)}}"><button class="btn btn-success">Yangilash</button></a></td>
                         <td><a href="{{ route('clients.show',$item->id)}}"><button class="btn btn-primary">Umumiy Malumot</button></a></td>
                         <td><a href="{{ route('clientf.show',$item->id)}}"><button class="btn btn-info">Qoshimcha</button></a></td>

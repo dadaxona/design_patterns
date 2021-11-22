@@ -5,22 +5,26 @@ use Illuminate\Support\Str;
 
 class StopService
 {
-  
-   
     protected $model;
-    protected $client;
-    protected $Clemtf;
-    protected $dealse;
-    protected $foreac;
-   
-    public function getlist(){
-    return [
-            "model"=>$this->model->all(),
-            "client"=>$this->client->all(),            
-            "Clemtf"=>$this->Clemtf->all(),
-            "dealse"=>$this->dealse->all(),
-            "foreac"=>$this->foreac->all(),
-            ];
+
+    public function getlist(?array $config = null){
+        $list = $this->model->query()->orderBy('id', 'desc');
+        //TODO make abstract
+        if(request()->has('related_resource') && request()->has('related_resource_id')){
+            $list = $list->whereHas(request()->get('related_resource'), function($query){
+                $tableName = Str::plural(request()->get('related_resource'));
+                $query->where( $tableName. '.id', request()->get('related_resource_id'));
+            });
+        }
+        if($config){
+            //columns
+            $list = $list->select($config['columns']);
+            //relations
+            $list->with($config['relations']);
+        }
+        $collection_arr = $list->paginate(request()->get('limit', 15))->toArray();
+        
+        return $collection_arr;
     }
     public function create($data)
     {

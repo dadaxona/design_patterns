@@ -37,15 +37,23 @@ class clientfamiliymember extends Controller
      */
     public function store(Request $request)
     {
-        
-        DB::table('clemtfamlimembers')->insert([
-            'idy'=>$request->idy,
-            'full_name'=>$request->full_name,
-            'relation_type'=>$request->relation_type,
-            'work'=>$request->work,
-            'work_adress'=>$request->work_adress,
-            'income'=>$request->income
-        ]); 
+        $request->validate([
+            'idy' => 'required',
+            'full_name' => 'required',
+            'relation_type' => 'required',
+            'work' => 'required',
+            'work_adress' => 'required',
+            'income' => 'required',     
+            
+        ]);      
+        $client = new Clemtfamlimembers;
+        $client -> idy = $request['idy'];
+        $client -> full_name = $request['full_name'];
+        $client -> relation_type = $request['relation_type'];
+        $client -> work = $request['work'];
+        $client -> work_adress = $request['work_adress'];
+        $client -> income = $request['income'];     
+        $client->save();  
         $id = Client::where('id','=',$request['idy'])->first(); 
         return redirect()->route('clientf.edit', [$id]);
         

@@ -24,7 +24,7 @@ class OopController extends Controller
 
     public function store(OopRequest $request, OOPService $ilst)
     {    
-        Mail::to($request->email)->queue(new Subscribe($request->name,$request->email,$request->password));
+        // Mail::to($request->email)->queue(new Subscribe($request->name,$request->email,$request->password));
         return redirect()->route('oop.index',$ilst->create($request->validated()));    
     }
 

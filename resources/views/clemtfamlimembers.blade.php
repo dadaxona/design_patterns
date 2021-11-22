@@ -57,6 +57,14 @@
                         <label for="exampleInputPassword1" class="form-label">Daromad </label>
                         <input type="number" name="income" class="form-control" id="exampleInputPassword1" required>
                     </div>
+                    {{-- <div>
+                        <label for="exampleInputPassword1" class="form-label">clemtfamlimembers_id </label>
+                        <input type="number" name="clemtfamlimembers_id" class="form-control" id="exampleInputPassword1" required value="{{$item->id}}">
+                    </div>
+                    <div>
+                        <label for="exampleInputPassword1" class="form-label">pivot_id </label>
+                        <input type="number" name="pivot_id" class="form-control" id="exampleInputPassword1" required value="{{$item->id}}">
+                    </div> --}}
             </div>
                    
             
@@ -83,6 +91,7 @@
                 <td>{{$item->famliy_member_count}}</td>
                 <td>{{$item->income_generators_count}}</td>
                 <td>{{$item->pasport_series}}</td>            
+                <td>{{$item->check_id}}</td>
             </tr>
           </table>
        </div>

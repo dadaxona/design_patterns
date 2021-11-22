@@ -9,30 +9,24 @@ use App\Providers\ChescService;
 
 class ChesckController extends Controller
 {
-    public function __construct(protected ChescService $post){}
+    private $config;
+
+    public function __construct(protected ChescService $post){
+        $this->config = [
+            'list' => [
+                'columns' => ['id', 'name','email','password','clemtfamlimembers_id','check_id'],
+                'relations' => [ 'clent','clientfamiliymember']
+            ]
+        ];
+    }
+
     public function index()
     {
-        
-        $client = $this->post->getList();
+        $client = $this->post->getList($this->config['list']);
+        // return view("Check",["items"=>$client]);
         return response()->json(["items"=>$client]);
-        // $client=Check::paginate(20);
-        // return view('Check',['items' => $client]);
+  
     }
-    // public function index()
-    // {
-    //     return $this->respons([
-    //         Check::select()->get(),
-    //         // Client::select()->get(),
-
-    //     ]);
-        
-    //     $client = $this->post->list();  
-    //         foreach($client as $rw2){
-    //         return response()->json(['item'=>$rw2]);       
-    //     }   
-    //     $user=Check::all();
-    //     return view('us',['items'=>$user]);
-    // }
 
     /**
      * Show the form for creating a new resource.

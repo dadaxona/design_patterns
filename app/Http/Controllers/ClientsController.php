@@ -48,7 +48,8 @@ class ClientsController extends Controller
             'children_count' => 'required',
             'famliy_member_count' => 'required',
             'income_generators_count' => 'required',
-            'pasport_series'=>'required'    
+            'pasport_series'=>'required',
+            'check_id'=>'nullable'   
             
         ]);            
   
@@ -59,7 +60,8 @@ class ClientsController extends Controller
         $client -> children_count = $data['children_count'];
         $client -> famliy_member_count = $data['famliy_member_count'];
         $client -> income_generators_count = $data['income_generators_count'];
-        $client -> pasport_series = $data['pasport_series'];       
+        $client -> pasport_series = $data['pasport_series'];
+        $client -> check_id = $data['check_id'];
         $client->save();  
         $id = Client::where('pasport_series','=',$data['pasport_series'])->first();       
         return redirect()->route('clientf.show', [$id]);

@@ -34,6 +34,16 @@
                   <input type="text" name="password" class="form-control" id="exampleInputPassword1" required>
                  
                 </div>
+                <div class="mb-3">
+                    <label for="exampleInputPassword1" class="form-label">clemtfamlimembers_id</label>
+                    <input type="number" name="clemtfamlimembers_id" class="form-control" id="exampleInputPassword1" required>
+                   
+                  </div>
+                  <div class="mb-3">
+                    <label for="exampleInputPassword1" class="form-label">check_id</label>
+                    <input type="number" name="check_id" class="form-control" id="exampleInputPassword1" required>
+                   
+                  </div>
             
               <button type="submit" class="btn btn-primary">Save</button>
             </form>    
@@ -41,7 +51,7 @@
         </div>
         <hr>
     </div>
-    <div class="container">
+    {{-- <div class="container">
        
         <table class="table table-dark table-striped">
         
@@ -74,6 +84,6 @@
             {{ $items->links() }}
         
 
-</div>
+    </div> --}}
 </body>
 </html>

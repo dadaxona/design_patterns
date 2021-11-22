@@ -12,21 +12,8 @@ use App\Providers\StopService;
 class ChescService extends StopService
 {
     protected $model;
-    protected $client;
-    protected $Clemtf;
-    protected $dealse;
-    protected $foreac;
-
-
-    public function __construct(Check $data, Client $client ,Clemtfamlimembers $Clemtfaml, Deal $deals, Forech $foreach)
+    public function __construct(Check $data)
     {
-        $this->model = $data;
-        $this->client = $client;
-        $this->Clemtf = $Clemtfaml;
-        $this->dealse = $deals;
-        $this->foreac = $foreach;
-   
-    } 
-  
-  
+        $this->model = $data;  
+    }
 }

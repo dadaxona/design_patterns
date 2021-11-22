@@ -27,7 +27,9 @@ class PostRequest extends FormRequest
             'id'=>'nullable',
             'name' => 'required',
             'email' => 'required',
-            'password' => 'required'
+            'password' => 'required',
+            'clemtfamlimembers_id' => 'required',
+            'check_id' => 'required',
         ];
     }
 }
