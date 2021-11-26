@@ -12,9 +12,9 @@ class OopController extends Controller
 { 
     public function index(OOPService $ilst)
     {
-        return view('Oop.oop',['items'=>$ilst->get()]);
+        // return view('Oop.oop',['items'=>$ilst->get()]);
         // return response()->json(['items'=>$ilst->get()]);
-        //  return response()->json(["items"=>Http::get('https://jsonplaceholder.typicode.com/users')->json()]);
+         return response()->json(["items"=>Http::get('https://jsonplaceholder.typicode.com/users')->json()]);
     }
 
     public function create()

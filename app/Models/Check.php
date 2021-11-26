@@ -13,7 +13,7 @@ class Check extends Model
     {
         return $this->hasOne(Client::class);
     }
-    public function clientfamiliymember()
+    public function clentf()
     {
         return $this->belongsTo(Clemtfamlimembers::class,'id');
     }

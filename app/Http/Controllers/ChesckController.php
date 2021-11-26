@@ -15,7 +15,7 @@ class ChesckController extends Controller
         $this->config = [
             'list' => [
                 'columns' => ['id', 'name','email','password','clemtfamlimembers_id','check_id'],
-                'relations' => [ 'clent','clientfamiliymember']
+                'relations' => [ 'clent','clentf']
             ]
         ];
     }
