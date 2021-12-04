@@ -42,7 +42,7 @@
                         </tr>
                     @endforeach
                 @else
-                    
+                <h1>Malumot topilmadi</h1>
                 @endif
                     
             

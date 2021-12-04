@@ -66,9 +66,10 @@
                     </tr>
                    
                 @endforeach    
-            @else                
+            @else
+            <h1>Malumot topilmadi</h1>
             @endif           
-        
+            
             </tbody>
             </table>
             {{ $a->links() }}

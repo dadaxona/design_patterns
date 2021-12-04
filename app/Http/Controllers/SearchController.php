@@ -9,7 +9,7 @@ use Illuminate\Support\Facades\DB;
 
 class SearchController extends Controller
 {
-    public function search(Request $req)
+    public function search()
     {
         if(isset($_GET['query']))
         {        
@@ -28,7 +28,7 @@ class SearchController extends Controller
 
         }
     }
-    public function search2(Request $req)
+    public function search2()
     { 
         if(isset($_GET['query']))
         {        
@@ -65,7 +65,7 @@ class SearchController extends Controller
         // }
         
     }
-    public function search25(Request $req)
+    public function search25()
     {
         if(isset($_GET['query']))
         {        
@@ -86,7 +86,7 @@ class SearchController extends Controller
             return view('clent');
         }
     }
-    public function search3(Request $req)
+    public function search3()
     { 
         if(isset($_GET['query']))
         {        

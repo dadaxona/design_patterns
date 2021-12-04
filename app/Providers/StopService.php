@@ -6,19 +6,9 @@ use Illuminate\Support\Str;
 class StopService
 {
     protected $model;
-
-    public function getlist(?array $config = null){
-        $list = $this->model->query()->orderBy('id', 'desc');
-              
-        if($config){
-            //columns
-            $list = $list->select($config['columns']);
-            //relations
-            $list->with($config['relations']);
-        }
-        $collection_arr = $list->paginate(request()->get('limit', 15))->toArray();
-        
-        return $collection_arr;
+    public function getlist($config)
+    {       
+        return $this->model->select($config['columns'])->with($config['relations'])->paginate(20);            
     }
     public function create($data)
     {
