@@ -23,8 +23,8 @@ class ChesckController extends Controller
     public function index()
     {
         $client = $this->post->getList($this->config['list']);
-        // return view("Check",["items"=>$client]);
-        return response()->json(["items"=>$client]);
+        return view("Check",["items"=>$client]);
+        // return response()->json(["items"=>$client]);
   
     }
 
