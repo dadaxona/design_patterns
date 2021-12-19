@@ -29,6 +29,7 @@ Route::resource('foreach',ForeachController::class);
 Route::resource('iter',InterfaseController::class);
 Route::resource('oop',OopController::class);
 Route::resource('oopproject',OopProjectController::class);
+Route::post('oopproject/{id}',[OopProjectController::class, 'update']);
 Route::resource('chesk', ChesckController::class);
 Route::resource('expenses', ExpenseController::class);
 Route::resource('clients', ClientsController::class);

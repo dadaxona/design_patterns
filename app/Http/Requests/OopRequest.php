@@ -27,8 +27,8 @@ class OopRequest extends FormRequest
             'id'=>'nullable',
             'name'=>'required',
             'email'=>'required|email|unique:oops',
-            'password'=>'required|min:6',
-            'confirmpassword'=>'required_with:password|same:password|min:6'
+            'password'=>'required',
+            // 'confirmpassword'=>'required_with:password|same:password|min:6'
            
         ];
     }

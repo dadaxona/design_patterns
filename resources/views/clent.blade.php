@@ -19,12 +19,13 @@
         <form action="{{ route('search')}}" method="GET" role="search">
             {{ csrf_field() }}
             <div class="input-group">
-                <input type="text" class="form-control" name="query"
-                    placeholder="Passport seryani kiriting"> <span class="input-group-btn">
+                <input type="text" class="form-control" name="pasport_series" placeholder="Pasport Seriya">
+                <input type="text" class="form-control" name="id" placeholder="ID orkali">
+                <input type="text" class="form-control" name="spouse_work" placeholder="Ish joyi">                
                     <button type="submit" class="btn btn-info">
                         <span class="glyphicon glyphicon-search">Kidirish</span>
                     </button>
-                </span>
+                    
             </div>
         </form>
         </div>

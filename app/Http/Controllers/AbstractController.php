@@ -14,8 +14,8 @@ abstract class AbstractController
 
     public function indexlesson()
     {
-        return view('OppProject.ooppro',['items'=>$this->list->get()]);
-        // return response()->json(['items'=>$this->ilsts->get()]);
+        // return view('OppProject.ooppro',['items'=>$this->list->get()]);
+        return response()->json(['items'=>$this->list->get()]);
     }
 
     public function create()
@@ -26,12 +26,12 @@ abstract class AbstractController
     public function storelesson($request)
     {    
         // Mail::to($request->email)->queue(new Subscribe($request->name,$request->email,$request->password));
-        return redirect()->route('oopproject.index',$this->list->create($request->validated())); 
+        return response()->json(['items'=>$this->list->create($request->validated())]); 
     } 
 
     public function showlesson($id)
     {
-        return view('OppProject.oopproshow',['item'=>$this->list->show($id)]);
+        return response()->json(['items'=>$this->list->show($id)]);
     }
   
     public function edit($id)
@@ -47,6 +47,6 @@ abstract class AbstractController
 
     public function destroylesson($id)
     {
-        return redirect()->route('oopproject.index',$this->list->delete($id));
+        return response()->json(['items'=>$this->list->delete($id)]);
     }
 }

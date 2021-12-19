@@ -9,24 +9,16 @@ use Illuminate\Support\Facades\DB;
 
 class SearchController extends Controller
 {
-    public function search()
+    public function search(Request $request)
     {
-        if(isset($_GET['query']))
-        {        
-         $query = $_GET['query'];   
-         
+        
           $contres = DB::table('clients')
-            ->where('name', 'like', '%'.$query.'%')
-            ->orWhere('spouse', 'like', '%'.$query.'%')
-            ->orWhere('spouse_work', 'like', '%'.$query.'%')
-            ->orWhere('children_count', 'like', '%'.$query.'%')
-            ->orWhere('famliy_member_count', 'like', '%'.$query.'%')
-            ->orWhere('income_generators_count', 'like', '%'.$query.'%')
-            ->orWhere('pasport_series', 'like', '%'.$query.'%')
+            ->where('id', '=', $request->id)
+            ->orWhere('spouse_work', '=', $request->spouse_work)
+            ->orWhere('pasport_series', '=', $request->pasport_series)
             ->paginate(5);
-           return view('clent',['a'=>$contres]);
 
-        }
+           return view('clent',['a'=>$contres]);    
     }
     public function search2()
     { 
